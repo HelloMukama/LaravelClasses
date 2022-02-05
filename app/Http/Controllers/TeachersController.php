@@ -20,7 +20,7 @@ class TeachersController extends Controller
 
     // $teachers = Teacher::all();
     // $teachers = Teacher::get();
-    // $teachers = Teacher::where('id', '=', 2)->get();
+    // $teachers = Teacher::where('id', '=', 2)->get(); // display details of teacher whose id=2 
     $teachers = Teacher::where('first_name', 'like', '%a%')->get();
     //    dd($teachers);
         return view('teachers.index', ['animals' => $teachers]);   // associative array
