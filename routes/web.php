@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TeachersController;
+use App\Http\Controllers\StudentsController;
 
 Route::get('/', function () {
     // dd('Hello world!');
@@ -17,14 +18,12 @@ Route::get('login', function(){
 });
 
 // students index
-Route::get('/students', function(){
+Route::get('/students_index', function(){
     return view('students.index');
 });
 
 // students form
-Route::get('/students/form', function(){
-    return view('students.form');
-});
+Route::get('/students/registration',  [StudentsController::class, 'create'])->name('students.registration.form');
 
 // // teachers index
 // Route::get('/myteachers', function(){
@@ -32,12 +31,17 @@ Route::get('/students/form', function(){
 // });
 
 // teachers form CONTROLLER
-Route::get('/myteachers', [TeachersController::class, 'index']);
+Route::get('/myteachers', [TeachersController::class, 'index'])->name('teachers');
 
 // teachers form
 Route::get('/admin/registration', function(){
     return view('teachers.form');
 });
+
+
+
+// teachers form CONTROLLER
+Route::get('/students', [StudentsController::class, 'index'])->name('students.index');
 
 
 

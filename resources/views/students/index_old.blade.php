@@ -21,7 +21,7 @@
         </style>
     </head>
     <body class="antialiased">
-        <h1>This is a form for registering students</h1>
+        <h1>This will show a list of registered students.</h1>
     
             
            
